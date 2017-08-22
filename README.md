@@ -4,6 +4,7 @@ The workflow below discusses one way to create an __Augmented Reality__ scene of
 
 * Using Blender, a 3D landscape is authored using public domain elevation data and aerial imagery.  
 * The 3D landscape is then imported into an __ARKit__ to create a 'table-top' __Augmented Reality__ scene.  
+* The table-top AR experience can be explored by using a pan gesture to rotate and tilt the mountain landscape.
 
 ![screen](screenshots/AR_Mt_Rainier.gif)
 
