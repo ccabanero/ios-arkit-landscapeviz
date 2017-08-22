@@ -149,7 +149,7 @@ Acquire your elevation data (i.e. DEM or height map) from the public domain.  In
 
 6) Play with repositioning the 3D landscape in the Scene Editor and run.  Point your phone at a table and it should resemble ...
 
-![screen](screenshots/tableTopAR_2.png)
+![screen](screenshots/tableTopAR_2.PNG)
 
 Continue hacking at your AR scene!
 
