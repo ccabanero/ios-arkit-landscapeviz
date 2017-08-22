@@ -3,8 +3,8 @@
 The workflow below discusses one way to create an __Augmented Reality__ scene of a real-world landscape using [Blender3d](https://www.blender.org) and Apple's [ARKit](https://developer.apple.com/arkit/). 
 
 * Using Blender, a 3D landscape is authored using public domain elevation data and aerial imagery.  
-* The 3D landscape is then imported into an __ARKit__ to create a 'table-top' __Augmented Reality__ scene.  
-* The table-top AR experience can be explored by using a pan gesture to rotate and tilt the mountain landscape.
+* The 3D landscape is then imported into an __ARKit__ Xcode project to create a 'table-top' __Augmented Reality__ scene.  
+* The Augmented Reality scene can be explored by using a pan gesture to rotate and tilt the mountain landscape.
 
 ![screen](screenshots/AR_Mt_Rainier.gif)
 
@@ -90,7 +90,7 @@ Acquire your elevation data (i.e. DEM or height map) from the public domain.  In
 
 ![screen](screenshots/10.png)
 
-* On the bottom left, coose the aerial image.
+* On the bottom left, choose the aerial image.
 
 ![screen](screenshots/11.png)
 
