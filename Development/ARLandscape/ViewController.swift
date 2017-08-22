@@ -12,7 +12,12 @@ import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
+    // MARK: - Properties
+    
+    var rainierNode: SCNNode!
     @IBOutlet var sceneView: ARSCNView!
+    
+    // MARK: - ViewController life cycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +33,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             return
         }
         
+        // Fetch the node for Mt. Rainier in the scene
+        rainierNode = scene.rootNode.childNode(withName: "Plane", recursively: true)
+        
         // Set the scene to the view
         sceneView.scene = scene
+        
+        // For rotating/tilting the landscape
+        let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ViewController.panGesture(gestureRecognize:)))
+        sceneView.addGestureRecognizer(panRecognizer)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,29 +66,40 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Release any cached data, images, etc that aren't in use.
     }
 
-    // MARK: - ARSCNViewDelegate
+    // MARK: - Gesture Action
     
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
+    @objc
+    func panGesture(gestureRecognize: UIPanGestureRecognizer) {
+        let translation = gestureRecognize.translation(in: gestureRecognize.view!)
+        
+        let x = Float(translation.x)
+        let y = Float(-translation.y)
+        
+        let anglePan = sqrt(pow(x, 2) + pow(y, 2)) * (Float)(Double.pi)/180.0
+        
+        var rotationVector = SCNVector4()
+        rotationVector.x = -y
+        rotationVector.y = x
+        rotationVector.z = 0
+        rotationVector.w = anglePan
+        
+        rainierNode.rotation = rotationVector
     }
-*/
+    
+    // MARK: - ARSCNViewDelegate
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
-        
+        print("File: \(#file), Method: \(#function), Line: \(#line)")
     }
     
     func sessionWasInterrupted(_ session: ARSession) {
         // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        
+        print("File: \(#file), Method: \(#function), Line: \(#line)")
     }
     
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
-        
+        print("File: \(#file), Method: \(#function), Line: \(#line)")
     }
 }

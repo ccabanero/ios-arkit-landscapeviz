@@ -2,15 +2,16 @@
 
 The workflow below discusses one way to create an __Augmented Reality__ scene of a real-world landscape using [Blender3d](https://www.blender.org) and Apple's [ARKit](https://developer.apple.com/arkit/). 
 
-* Using Blender, a 3D landscape is authored using elevation and aerial image data.  
-* The 3D landscape model is then imported into an __ARKit__ project to create a 'table-top' __Augmented Reality__ scene.  
+* Using Blender, a 3D landscape is authored using public domain elevation data and aerial imagery.  
+* The 3D landscape is then imported into an __ARKit__ to create a 'table-top' __Augmented Reality__ scene.  
 
-![screen](screenshots/tabletop_ar.png)
+![screen](screenshots/AR_Mt_Rainier.gif)
+
 Figure: Mt. Rainier Augmented Reality scene using ARKit.
 
 ### Part 1: Get Elevation Data
 
-Acquire an elevation model (i.e. Height Map) from the public domain.  In this example, we fetch an elevation model of Mt. Rainier, Washington.
+Acquire your elevation data (i.e. DEM or height map) from the public domain.  In this example, we fetch an elevation model of Mt. Rainier, Washington.
 
 ### Part 2: Create 3D Mesh with Height Map
 
@@ -66,7 +67,7 @@ Acquire an elevation model (i.e. Height Map) from the public domain.  In this ex
 
 ![screen](screenshots/6.png)
 
-### Part 3: Add the Aerial
+### Part 3: Add the Aerial as a Texture
 
 1) Acquire an aerial image for the same geographic extent as your height map.
 
@@ -148,7 +149,7 @@ Acquire an elevation model (i.e. Height Map) from the public domain.  In this ex
 
 6) Play with repositioning the 3D landscape in the Scene Editor and run.  Point your phone at a table and it should resemble ...
 
-![screen](screenshots/tabletop_ar.png)
+![screen](screenshots/tableTopAR_2.png)
 
 Continue hacking at your AR scene!
 
